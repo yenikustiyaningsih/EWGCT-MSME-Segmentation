@@ -1200,7 +1200,7 @@ def main():
         st.markdown("**📤 Upload Dataset**")
         uploaded_file = st.file_uploader(
             "Pilih file Excel/CSV",
-            type=['xlsx', 'xls', 'csv'],
+            type=['xlsx', 'csv'],
             help="File harus memiliki kolom: Nama Pemilik, Nama Usaha, 8 fitur"
         )
         
