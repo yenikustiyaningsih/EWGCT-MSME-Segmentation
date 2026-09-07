@@ -35,7 +35,7 @@ The workflow is demonstrated using anonymized or de-identified MSME records from
     ↓
 2. Data Cleaning and Documentation
    Remove duplicates, inspect missing values, handle outliers,
-   and record preprocessing decisions
+   and document preprocessing decisions
     ↓
 3. Dual Variable Representation
    Preserve raw categorical values for Gower dissimilarity
@@ -55,7 +55,7 @@ The workflow is demonstrated using anonymized or de-identified MSME records from
    and Top-N feature-subset CLARA
     ↓
 7. Candidate k Evaluation
-   Test candidate cluster numbers using repeated CLARA
+   Evaluate candidate cluster numbers using repeated CLARA
    sampling and PAM medoids
     ↓
 8. Cluster Validation and Model Selection
@@ -65,7 +65,7 @@ The workflow is demonstrated using anonymized or de-identified MSME records from
     ↓
 9. Cluster Profiling
    Describe the selected clusters using cluster sizes, medoids,
-   and average economic or operational characteristics
+   and average economic and operational characteristics
     ↓
 10. Within-Cluster TOPSIS Ranking
     Apply TOPSIS separately within each selected cluster using
