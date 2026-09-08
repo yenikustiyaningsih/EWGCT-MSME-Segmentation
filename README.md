@@ -3,12 +3,21 @@
 [![Python](https://img.shields.io/badge/Python-3.10.7-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![MethodsX](https://img.shields.io/badge/Journal-MethodsX-005A9C.svg)](https://www.sciencedirect.com/journal/methodsx)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ewgct-msme-segmentation.streamlit.app)
 
 A reproducible implementation of the **Entropy-Weighted Gower–CLARA–TOPSIS (EWGCT)** procedure for mixed-type Micro, Small, and Medium Enterprise (MSME) segmentation and within-cluster prioritization.
 
 This repository accompanies the MethodsX manuscript:
 
 > **A Reproducible Entropy-Weighted Gower-CLARA-TOPSIS Procedure for Mixed-Type MSME Segmentation and Prioritization**
+
+---
+
+## Live Application
+
+The interactive Streamlit application is publicly available at:
+
+[Launch the EWGCT Streamlit Application](https://ewgct-msme-segmentation.streamlit.app)
 
 ---
 
@@ -20,7 +29,7 @@ The EWGCT procedure integrates:
 * **Gower dissimilarity** for mixed numerical, count, binary, and categorical data;
 * **CLARA with PAM/K-Medoids** for scalable medoid-based clustering;
 * **Top-N feature selection** for evaluating reduced feature configurations;
-* **Internal cluster validation** using the Silhouette Coefficient, medoid-based Davies–Bouldin Index, and Calinski–Harabasz Index;
+* **Internal cluster validation** using the Silhouette Coefficient, medoid-based Davies–Bouldin Index, and Calinski–Harabasz Index; and
 * **Within-cluster TOPSIS** for ranking MSMEs among comparable peer groups.
 
 The workflow is demonstrated using anonymized or de-identified MSME records from Sampang, Indonesia.
@@ -85,10 +94,11 @@ The workflow is demonstrated using anonymized or de-identified MSME records from
 EWGCT-MSME-Segmentation/
 │
 ├── Data/
-│   └── Anonymized or de-identified demonstration dataset
+│   └── dataset_umkm_sampang_25 new.xlsx
 │
 ├── Docs/
 │   ├── README_TOPSIS.md
+│   ├── SAMPLE_OUTPUT_TOPSIS.md
 │   └── TOPSIS_IMPLEMENTATION_GUIDE.md
 │
 ├── Notebook/
@@ -119,7 +129,7 @@ The demonstration dataset contains mixed-type MSME attributes, including:
 * annual revenue;
 * assets;
 * social-media use;
-* marketplace use;
+* marketplace use; and
 * land ownership.
 
 Direct identifiers have been removed or replaced with anonymous codes. The repository does not contain the original non-anonymized administrative records.
@@ -128,7 +138,7 @@ Direct identifiers have been removed or replaced with anonymous codes. The repos
 
 ## Installation
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yenikustiyahningsih/EWGCT-MSME-Segmentation.git
@@ -137,7 +147,7 @@ cd EWGCT-MSME-Segmentation
 
 Alternatively, select **Code → Download ZIP** on the repository page and extract the downloaded file.
 
-### 2. Create a virtual environment
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv .venv
@@ -155,7 +165,7 @@ Activate the environment on Linux or macOS:
 source .venv/bin/activate
 ```
 
-### 3. Install the dependencies
+### 3. Install the Dependencies
 
 ```bash
 python -m pip install --upgrade pip
@@ -189,7 +199,11 @@ Run all cells sequentially from the beginning to reproduce:
 
 ## Running the Streamlit Application
 
-Run the application from the repository root:
+The deployed application can be accessed directly through Streamlit Community Cloud:
+
+[Open the EWGCT Streamlit Application](https://ewgct-msme-segmentation.streamlit.app)
+
+Alternatively, run the application locally from the repository root:
 
 ```bash
 streamlit run Streamlit_app/new_streamlit.py
@@ -209,6 +223,8 @@ The application provides interactive access to:
 * within-cluster TOPSIS results; and
 * downloadable clustering and ranking outputs.
 
+For deployment on Streamlit Community Cloud, select **Python 3.10** in the advanced deployment settings to ensure compatibility with the dependency versions listed in `requirements.txt`.
+
 ---
 
 ## Main Demonstration Results
@@ -222,11 +238,11 @@ The selected configuration retained four operational and financial features:
 
 The selected Top-4 configuration at `k = 4` produced:
 
-| Validation metric                 |   Result |
-| --------------------------------- | -------: |
-| Silhouette Coefficient            |   0.5588 |
-| Medoid-based Davies–Bouldin Index |   0.6181 |
-| Calinski–Harabasz Index           | 992.3958 |
+| Validation metric | Result |
+| --- | ---: |
+| Silhouette Coefficient | 0.5588 |
+| Medoid-based Davies–Bouldin Index | 0.6181 |
+| Calinski–Harabasz Index | 992.3958 |
 
 These values should be reproduced using the supplied dataset, implementation, parameters, and dependency versions.
 
@@ -263,6 +279,7 @@ Entropy weights represent the observed information dispersion of the dataset. Th
 Additional TOPSIS documentation is available in:
 
 * [`Docs/README_TOPSIS.md`](Docs/README_TOPSIS.md)
+* [`Docs/SAMPLE_OUTPUT_TOPSIS.md`](Docs/SAMPLE_OUTPUT_TOPSIS.md)
 * [`Docs/TOPSIS_IMPLEMENTATION_GUIDE.md`](Docs/TOPSIS_IMPLEMENTATION_GUIDE.md)
 
 ---
